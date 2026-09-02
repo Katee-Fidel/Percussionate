@@ -327,14 +327,13 @@ button:focus-visible {
   background-size: cover;
   background-position: center;
 
-  background: repeating-linear-gradient(115deg, rgba(255, 255, 255, 0.03) 0 2px, transparent 2px 26px),
-    linear-gradient(160deg, #262626, #141414 55%, #0c0c0c);
+  background-color: #141414;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background-blend-mode: overlay, normal;
+  background-blend-mode: normal;
   pointer-events: none;
 }
 
@@ -353,6 +352,21 @@ button:focus-visible {
   max-width: 760px;
   padding: 0 6vw;
 }
+
+@media (min-width: 861px) {
+  .hero {
+    padding-top: 100px;
+  }
+
+  .hero-layout {
+    min-height: calc(100vh - 150px);
+  }
+
+  .hero-content-col,
+  .hero-photo-placeholder {
+    height: calc(100vh - 150px);
+  }
+}
 .hero-content h1 {
   font-size: clamp(2.6rem, 7vw, 5.2rem);
   line-height: 0.98;
@@ -368,7 +382,7 @@ button:focus-visible {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
-  margin-top: auto;
+  margin-top: 10px;
 }
 .btn-primary {
   padding: 14px 28px;

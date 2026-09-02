@@ -33,10 +33,7 @@ export default function Hero() {
         >
         </div>
       </div>
-      <div className="scroll-cue">
-        <span>SCROLL</span>
-        <span className="dash" />
-      </div>
+      
     </section>
   )
 }
