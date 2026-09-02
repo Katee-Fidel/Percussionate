@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+
+
+.main-wrapper{
+    display: flex;
+    height: 100vh;
+    width: 700px;
+    border: solid red 1px;
+}
+
+.main-wrapper h1{
+    /* margin: auto; */
+    
+}
+
+.main-wrapper p{
+    margin: auto;
+    margin-top: 20px;
+}
+
