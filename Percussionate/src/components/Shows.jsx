@@ -12,19 +12,25 @@ export default function Shows() {
       </div>
 
       <Reveal className="past-scroll">
-        {pastShows.map((show) => (
-          <article className="show-card" key={`${show.title}-${show.year}`}>
-            <div className="thumb">
-              {show.photo && <img src={show.photo} alt={show.title} />}
-              {!show.photo && <span className="tag">photo/video</span>}
-            </div>
-            <div className="info">
-              <span className="yr">{show.year}</span>
-              <h3>{show.title}</h3>
-              <p className="loc">{show.location}</p>
-            </div>
-          </article>
-        ))}
+        <div className="past-track">
+          {[...pastShows, ...pastShows].map((show, index) => (
+            <article
+              className="show-card"
+              key={`${show.title}-${show.year}-${index}`}
+              aria-hidden={index >= pastShows.length}
+            >
+              <div className="thumb">
+                {show.photo && <img src={show.photo} alt={index >= pastShows.length ? '' : show.title} />}
+                {!show.photo && <span className="tag">photo/video</span>}
+              </div>
+              <div className="info">
+                <span className="yr">{show.year}</span>
+                <h3>{show.title}</h3>
+                <p className="loc">{show.location}</p>
+              </div>
+            </article>
+          ))}
+        </div>
       </Reveal>
     </section>
   )

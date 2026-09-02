@@ -517,24 +517,28 @@ button:focus-visible {
 }
 
 .past-scroll {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
+  overflow: hidden;
   padding: 6px 6vw 20px;
   margin: 0 -6vw;
-  scroll-snap-type: x proximity;
 }
-.past-scroll::-webkit-scrollbar {
-  height: 6px;
+.past-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: shows-scroll 32s linear infinite;
+  will-change: transform;
 }
-.past-scroll::-webkit-scrollbar-thumb {
-  background: rgba(246, 245, 241, 0.2);
-  border-radius: 10px;
+.past-scroll:hover .past-track,
+.past-scroll:focus-within .past-track {
+  animation-play-state: paused;
+}
+@keyframes shows-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - 10px)); }
 }
 
 .show-card {
   flex: 0 0 300px;
-  scroll-snap-align: start;
   border-radius: 14px;
   overflow: hidden;
   background: var(--glass-bg);
