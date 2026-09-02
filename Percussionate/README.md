@@ -1,4 +1,4 @@
-# Amara Wekesa — Portfolio (React + Vite)
+# DOGOO — Portfolio (React + Vite)
 
 A single-page artist portfolio: glassmorphic navbar, hero, bio, past/upcoming
 shows, and contact/socials — built around a black / white / grey palette with
