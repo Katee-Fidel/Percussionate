@@ -169,11 +169,12 @@ button:focus-visible {
   left: 0;
   right: 0;
   z-index: 1000;
+  isolation: isolate;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 6vw;
-  background: var(--glass-bg);
+  background: rgba(11, 11, 11, 0.94);
   backdrop-filter: blur(var(--glass-blur)) saturate(140%);
   -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(140%);
   border-bottom: 1px solid var(--glass-border);
@@ -181,7 +182,7 @@ button:focus-visible {
 }
 .navbar.scrolled {
   padding: 12px 6vw;
-  background: rgba(11, 11, 11, 0.6);
+  background: rgba(11, 11, 11, 0.98);
 }
 .nav-logo {
   display: block;
@@ -305,7 +306,7 @@ button:focus-visible {
   align-items: stretch;
   gap: 6vw;
   position: relative;
-  z-index: 2;
+  z-index: 0;
 }
 
 .hero-content-col {
@@ -502,6 +503,9 @@ button:focus-visible {
   gap: 32px;
   flex-wrap: wrap;
   justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  text-align: left;
   margin-top: 56px;
 }
 .milestone {
@@ -546,7 +550,6 @@ button:focus-visible {
   animation: shows-scroll 33s linear infinite;
   will-change: transform;
 }
-.past-scroll:hover .past-track,
 .past-scroll:focus-within .past-track {
   animation-play-state: paused;
 }
@@ -563,9 +566,6 @@ button:focus-visible {
   border: 1px solid var(--glass-border);
   backdrop-filter: blur(10px);
   transition: transform 0.3s ease;
-}
-.show-card:hover {
-  transform: translateY(-4px);
 }
 .show-card .thumb {
   aspect-ratio: 1 / 1;
@@ -598,6 +598,16 @@ button:focus-visible {
 .show-card .info .loc {
   font-size: 0.82rem;
   color: var(--text-secondary);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .past-scroll:hover .past-track {
+    animation-play-state: paused;
+  }
+
+  .show-card:hover {
+    transform: translateY(-4px);
+  }
 }
 
 /* ============================================================
