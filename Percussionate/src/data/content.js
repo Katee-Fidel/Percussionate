@@ -36,7 +36,7 @@ export const pastShows = [
   { year: '13 Dec 2025', title: 'Aduma', location: 'Downtown Nanyuki', photo: 'images/show.jpg' },
   { year: '11 Jul 2026', title: 'The Darque Experience', location: 'Railway museum, Nairobi', photo: 'images/darque.jpg' },
   { year: '3 Jan 2026', title: 'Rammor ', location: 'Railway museum, Nairobi', photo: 'images/railway.jpg' },
-  { year: '28th Feb 2026', title: 'Kunye', location: 'Uhuru Gardens, Nairobi', photo: 'images/kunye.jpg'}
+  { year: '28 Feb 2026', title: 'Kunye', location: 'Uhuru Gardens, Nairobi', photo: 'images/kunye.jpg'}
 ]
 
 export const contact = {
