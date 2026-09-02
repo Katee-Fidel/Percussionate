@@ -98,9 +98,6 @@ button:focus-visible {
    overlaid with pulsing equalizer bars.
 ============================================================ */
 .rhythm-bar {
-  display: flex;
-  align-items: flex-end;
-  gap: 3px;
   height: 34px;
   width: 100%;
   padding: 0 6vw;
@@ -120,6 +117,20 @@ button:focus-visible {
     )
     bottom / 100% 3px no-repeat;
 }
+.rhythm-track {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  width: max-content;
+  height: 100%;
+  animation: rhythm-scroll 32s linear infinite;
+  will-change: transform;
+}
+.rhythm-group {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+}
 .rhythm-bar span {
   display: block;
   width: 4px;
@@ -127,6 +138,10 @@ button:focus-visible {
   background: linear-gradient(180deg, var(--gold-bright), var(--ash));
   animation: pulse 1.6s ease-in-out infinite;
   opacity: 0.85;
+}
+@keyframes rhythm-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - 1.5px)); }
 }
 @keyframes pulse {
   0%, 100% { transform: scaleY(0.25); }
@@ -520,12 +535,14 @@ button:focus-visible {
   overflow: hidden;
   padding: 6px 6vw 20px;
   margin: 0 -6vw;
+  background: var(--ink);
 }
 .past-track {
   display: flex;
   gap: 20px;
   width: max-content;
-  animation: shows-scroll 32s linear infinite;
+  min-height: 100%;
+  animation: shows-scroll 33s linear infinite;
   will-change: transform;
 }
 .past-scroll:hover .past-track,
@@ -675,11 +692,12 @@ button:focus-visible {
 
   .hero-content-col {
     height: auto;
-    padding: 0;
+    min-height: 58vh;
+    padding: 24px 0 40px;
   }
 
   .hero-ctas {
-    margin-top: 0;
+    margin-top: auto;
   }
 
   .hero-photo-placeholder {
@@ -699,13 +717,40 @@ button:focus-visible {
     padding: 0 8vw;
   }
 
+  .hero-content-col {
+    min-height: 62vh;
+    padding: 18px 0 34px;
+  }
+
+  .hero-content-col h1 {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+    line-height: 1;
+    margin: 12px 0 18px;
+  }
+
+  .hero-content-col p {
+    font-size: 0.9rem;
+    line-height: 1.45;
+    margin-bottom: 0;
+  }
+
+  .hero-ctas {
+    margin-top: 50px;
+  }
+
   .hero-content h1 {
     font-size: clamp(2.1rem, 9vw, 3.2rem);
   }
 
   .hero-photo-placeholder {
-    height: 240px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    max-width: none;
     border-radius: 8px;
+    background-size: contain !important;
+    background-repeat: no-repeat;
+    background-color: #141414;
   }
 }
 

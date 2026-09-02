@@ -15,7 +15,7 @@ export default function RhythmBar() {
       return x - Math.floor(x)
     }
 
-    return Array.from({ length: 60 }, (_, i) => {
+    return Array.from({ length: 180 }, (_, i) => {
       const r1 = pseudoRand(i + 1)
       const r2 = pseudoRand(i + 101)
       const r3 = pseudoRand(i + 201)
@@ -29,16 +29,22 @@ export default function RhythmBar() {
 
   return (
     <div className="rhythm-bar" aria-hidden="true">
-      {bars.map((bar, i) => (
-        <span
-          key={i}
-          style={{
-            height: `${bar.height}px`,
-            animationDelay: `${bar.delay}s`,
-            animationDuration: `${bar.duration}s`,
-          }}
-        />
-      ))}
+      <div className="rhythm-track">
+        {[0, 1].map((group) => (
+          <div className="rhythm-group" key={group}>
+            {bars.map((bar, i) => (
+              <span
+                key={i}
+                style={{
+                  height: `${bar.height}px`,
+                  animationDelay: `${bar.delay}s`,
+                  animationDuration: `${bar.duration}s`,
+                }}
+              />
+            ))}
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
