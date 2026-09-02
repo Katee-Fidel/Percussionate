@@ -19,18 +19,8 @@ export default function Hero() {
           </div>
         </div>
 
-        <div
-          className="hero-photo-placeholder"
-          style={
-            artist.heroPhoto
-              ? {
-                  backgroundImage: `url(${artist.heroPhoto})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }
-              : undefined
-          }
-        >
+        <div className="hero-photo-placeholder">
+          {artist.heroPhoto && <img src={artist.heroPhoto} alt={`${artist.name} performing`} />}
         </div>
       </div>
       
